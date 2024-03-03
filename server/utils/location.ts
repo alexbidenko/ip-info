@@ -1,9 +1,7 @@
-import {IP2Location} from 'ip2location-nodejs';
-import {resolve} from 'path';
+import {IP2Location} from "ip2location-nodejs";
+import {resolve} from "path";
 
-export default eventHandler((event) => {
-    const ipAddress = getRequestIP(event, {xForwardedFor: true});
-
+export const getLocation = (ipAddress: string) => {
     const ip2location = new IP2Location();
 
     ip2location.open(resolve('./public/assets/IP_DB.BIN'));
@@ -19,4 +17,4 @@ export default eventHandler((event) => {
         region: info.region,
         city: info.city,
     };
-});
+};
