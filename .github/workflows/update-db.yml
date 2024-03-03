@@ -21,11 +21,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - run: ls -l /var/tmp
+
       - name: Download
         run: wget -O "/var/tmp/IP_DB.zip" "https://www.ip2location.com/download/?token=${{ secrets.IP2LOCATION_TOKEN }}&file=${{ env.DATABASE_CODE }}"
 
+      - run: ls -l /var/tmp
+
       - name: Unzip
         run: unzip /var/tmp/IP_DB.zip -d /var/tmp/IP_DB
+
+      - run: ls -l /var/tmp
 
       - name: Replace
         run: mv -f /var/tmp/IP_DB/IP2LOCATION-LITE-DB3.IPV6.BIN public/assets/IP_DB.BIN
