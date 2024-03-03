@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download
-        run: wget -O /var/tmp/IP_DB.zip https://www.ip2location.com/download/?token=${{ secrets.IP2LOCATION_TOKEN }}&file=${{ env.DATABASE_CODE }}
+        run: wget -O "/var/tmp/IP_DB.zip" "https://www.ip2location.com/download/?token=${{ secrets.IP2LOCATION_TOKEN }}&file=${{ env.DATABASE_CODE }}"
 
       - name: Unzip
         run: unzip /var/tmp/IP_DB.zip -d /var/tmp/IP_DB
