@@ -6,7 +6,9 @@ Available methods:
 
 - Get user IP:
 
-`curl https://ip-info.admire.social/api/ip`
+```shell
+curl https://ip-info.admire.social/api/ip
+```
 
 Response:
 
@@ -14,9 +16,11 @@ Response:
 {"ip":"8.8.8.8"}
 ```
 
-- Gep user location:
+- Get user location:
 
-`curl https://ip-info.admire.social/api/location`
+```shell
+curl https://ip-info.admire.social/api/location
+```
 
 Response:
 
@@ -26,7 +30,9 @@ Response:
 
 - Get location by IP:
 
-`curl https://ip-info.admire.social/api/location/8.8.8.8`
+```shell
+curl https://ip-info.admire.social/api/location/8.8.8.8
+```
 
 Response:
 
