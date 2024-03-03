@@ -24,7 +24,7 @@ jobs:
       - run: ls -l /var/tmp
 
       - name: Download
-        run: wget -O "/var/tmp/IP_DB.zip" "https://www.ip2location.com/download/?token=${{ secrets.IP2LOCATION_TOKEN }}&file=${{ env.DATABASE_CODE }}"
+        run: wget "https://www.ip2location.com/download/?token=${{ secrets.IP2LOCATION_TOKEN }}&file=${{ env.DATABASE_CODE }}" -O "/var/tmp/IP_DB.zip"
 
       - run: ls -l /var/tmp
 
