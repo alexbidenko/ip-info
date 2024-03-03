@@ -2,11 +2,10 @@ name: 'Update DB'
 
 on:
   schedule:
-    - cron:  '* * * * *'
+    - cron:  '0 3 1 * *'
   push:
     branches:
       - main
-#    - cron:  '0 3 1 * *'
 
 env:
   DATABASE_CODE: DB3LITEBINIPV6
