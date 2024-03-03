@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Update DB"]
+    types:
+      - completed
 
 jobs:
   build:

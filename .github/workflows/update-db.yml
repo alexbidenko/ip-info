@@ -12,7 +12,7 @@ env:
   DATABASE_CODE: DB3LITEBINIPV6
 
 jobs:
-  build:
+  update-db:
     runs-on: ubuntu-22.04
 
     permissions:
