@@ -1,0 +1,32 @@
+name: 'Update DB'
+
+on:
+  schedule:
+    - cron:  '17 5 * * *'
+#    - cron:  '0 3 1 * *'
+
+envs:
+  DATABASE_CODE: DB3LITEBINIPV6
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download
+        run: wget -O /var/tmp/IP_DB.zip https://www.ip2location.com/download/?token=${{ secrets.IP2LOCATION_TOKEN }}&file=${{ envs.DATABASE_CODE }}
+
+      - name: Unzip
+        run: unzip /var/tmp/IP_DB.zip -d /var/tmp/IP_DB
+
+      - name: Replace
+        run: mv -f /var/tmp/IP_DB/IP2LOCATION-LITE-DB3.IPV6.BIN public/assets/IP_DB.BIN
+
+      - name: Save
+        uses: stefanzweifel/git-auto-commit-action@v5
