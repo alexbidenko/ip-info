@@ -1,6 +1,6 @@
-FROM node:20-alpine as base
+FROM node:20-alpine AS base
 
-RUN npm i --global --no-update-notifier --no-fund pnpm
+RUN npm i --global --no-update-notifier --no-fund pnpm@9.15.9
 
 FROM base AS dependencies
 
